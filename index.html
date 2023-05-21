@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lab5</title>
+  <link rel="stylesheet" href="css.css">
+  <style>
+    .content {
+      margin-top: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="scroll-box">
+      <h1><strong>Brilyant <span style="color: lightgray;">.</span></strong></h1>
+      <div class="links">
+        <a class="home" href="#">Home</a>
+        <a href="#">Photography</a>
+        <a href="#">Travel</a>
+        <a href="#">Fashion</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="end">
+        <p>Copyright ©2023 All rights reserved <br> | This template is made with 🖤 by <br> <span
+            style="color:  #F0642C;">Brilyant</span></p>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/" target="_blank"><img src="img/fb.jpg" width="18" height="18"
+            alt="Facebook"></a>
+        <a href="https://www.twitter.com/" target="_blank"><img src="img/twt.jpg" width="18" height="18"
+            alt="Twitter"></a>
+        <a href="https://www.instagram.com/" target="_blank"><img src="img/ins.jpg" width="18" height="18"
+            alt="Instagram"></a>
+        <a href="https://www.linkedin.com/in/" target="_blank"><img src="img/in.jpg" width="18" height="18"
+            alt="LinkedIn"></a>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="circle"> 
+        <img src="img/avatar.jpg" alt="">
+      </div>
+      <h4>Hello I'm</h4>
+      <h1>Brilyant Allahverdizadə</h1>
+      <p>
+        Salam, mən Allahverdizadə Brilyant. Azərbaycan Texniki Universitetinin 1-ci kurs tələbəsiyəm. Həmin
+        universitetin "İnformasiya və telekommunikasiya texnologiyaları" fakültəsinin <em>İnformasiya təhlükəsizliyi
+          ixtisasında təhsil alıram.</em>
+      </p>
+    <div class="foot">
+       <a class="ft" href="#">More About Me</a>
+    </div>
+      <br>
+      <br>
+      <br><br>
+      <br>
+      <br><br>
+      <br>
+      <br>
+      <div class="calculator">
+        <input type="text" id="display" readonly>
+        <div class="buttons">
+          <button onclick="appendValue(7)">7</button>
+          <button onclick="appendValue(8)">8</button>
+          <button onclick="appendValue(9)">9</button>
+          <button onclick="appendOperator('+')">+</button>
+          <button onclick="appendValue(4)">4</button>
+          <button onclick="appendValue(5)">5</button>
+          <button onclick="appendValue(6)">6</button>
+          <button onclick="appendOperator('-')">-</button>
+          <button onclick="appendValue(1)">1</button>
+          <button onclick="appendValue(2)">2</button>
+          <button onclick="appendValue(3)">3</button>
+          <button onclick="appendOperator('*')">*</button>
+          <button onclick="appendValue(0)">0</button>
+          <button onclick="appendValue('.')">.</button>
+          <button onclick="appendPercentage()">%</button>
+          <button onclick="appendOperator('/')">/</button>
+          <button onclick="calculate()">=</button>
+          <button onclick="clearDisplay()">C</button>
+
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function clearDisplay() {
+      document.getElementById('display').value = '';
+    }
+
+    function appendValue(value) {
+      document.getElementById('display').value += value;
+    }
+
+    function appendOperator(operator) {
+      const displayValue = document.getElementById('display').value;
+      if (displayValue !== '') {
+        const lastChar = displayValue[displayValue.length - 1];
+        if (lastChar !== '+' && lastChar !== '-' && lastChar !== '*' && lastChar !== '/') {
+          document.getElementById('display').value += operator;
+        }
+      }
+    }
+
+    function calculate() {
+      const displayValue = document.getElementById('display').value;
+      if (displayValue !== '') {
+        try {
+          const result = eval(displayValue);
+          document.getElementById('display').value = result;
+        } catch (error) {
+          document.getElementById('display').value = 'Error';
+        }
+      }
+    }
+
+    function appendPercentage() {
+      const displayValue = document.getElementById('display').value;
+      if (displayValue !== '') {
+        const result = eval(displayValue) / 100;
+        document.getElementById('display').value = result;
+      }
+    }
+  </script>
+</body>
+
+</html>
